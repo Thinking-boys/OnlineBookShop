@@ -40,7 +40,7 @@ public  class CartItemServiceImpl implements CartItemService  {
 	 * @see cn.jxufe.web.home.service.CartItemService#deleteCartItem(java.lang.Integer)
 	 */
 	public int deleteCartItem(Integer id) throws Exception{
-		String sql = "delete from t_cartitem where id=?";
+		String sql = "delete from t_cartItem where id=?";
 		Object[] args=new Object[]{ id };
 		return baseDao.executeByArray(sql, args);
 	}
@@ -67,7 +67,7 @@ public  class CartItemServiceImpl implements CartItemService  {
 	 * @see cn.jxufe.web.home.service.CartItemService#getCartItemList()
 	 */
 	public List<CartItem> getCartItemList(Integer id){
-		String sql = "select * from t_cartitem where userId=?";
+		String sql = "select * from t_cartItem where userId=?";
 		Object[] args = new Object[] { id };
 		return baseDao.findListBeanByArray(sql, CartItem.class, args);
 	}
@@ -81,7 +81,7 @@ public  class CartItemServiceImpl implements CartItemService  {
 	public int copyCartItemToOrderItem(Integer cartItemId, Integer orderId) throws Exception{
 		String sql = "insert into t_orderitem(quantity,subtotal,bookId,bookName,currPrice,"
 				+ "imagePath,orderId) select quantity,"
-				+ "total,bookId,bookName,currPrice,imagePath,? as orderId from t_cartitem where id=?";
+				+ "total,bookId,bookName,currPrice,imagePath,? as orderId from t_cartItem where id=?";
 		Object[] args = new Object[] { orderId, cartItemId };
 		return baseDao.executeByArray(sql, args);
 	}

@@ -1,12 +1,14 @@
 package cn.jxufe.web.admin.controller;
 
 import java.io.FileOutputStream;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import cn.jxufe.core.common.BooksRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -142,8 +144,8 @@ public class AdminController {
 	}
 	
 	@RequestMapping("/book/saveAdd")
-	public String bookSaveAdd(MultipartHttpServletRequest request, Book book){
-
+	public String bookSaveAdd(MultipartHttpServletRequest request, BooksRequest book){
+		SimpleDateFormat format=new SimpleDateFormat("yyyy/MM/dd");
 		try {
 			//读取配置文件
 			PropertiesUtil pUtil = PropertiesUtil
@@ -168,9 +170,30 @@ public class AdminController {
 				no = no + 1;
 				newFileName="/upload/"+ realName;
 			}
-			book.setImagePath(newFileName);
-			book.setCurrPrice(book.getPrice()*book.getDiscount());
-			bookService.insertBook(book);
+			Date printTime = format.parse( book.getPrintTime() );
+			Date publishTime = format.parse( book.getPublishTime() );
+
+			Book books=new Book();
+			books.setAuthor( book.getAuthor() );
+			books.setBooksize( book.getBooksize() );
+			books.setCategoryId( book.getCategoryId() );
+			books.setDescription( book.getDescription() );
+			books.setDiscount( book.getDiscount() );
+			books.setEdition( book.getEdition() );
+			books.setId( book.getId() );
+			books.setName( book.getName() );
+			books.setOrderIndex( book.getOrderIndex() );
+			books.setPageNum( book.getPageNum() );
+			books.setPaper( book.getPaper() );
+			books.setPress( book.getPress() );
+			books.setPrice( book.getPrice() );
+			books.setPrintTime( printTime );
+			books.setPublishTime(  publishTime);
+			books.setWordNum( book.getWordNum() );
+
+			books.setImagePath(newFileName);
+			books.setCurrPrice(book.getPrice()*book.getDiscount());
+			bookService.insertBook(books);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 			logger.error(e.getMessage());

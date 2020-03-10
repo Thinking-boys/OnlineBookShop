@@ -5,6 +5,6 @@
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>© 2015 Company, Inc. · <a href="#">在线书店</a> · <a href="#">All Rights Reserved</a></p>
+        <p><a href="#">乐学书店</a> </p>
       </footer>
     </div><!-- /.container -->

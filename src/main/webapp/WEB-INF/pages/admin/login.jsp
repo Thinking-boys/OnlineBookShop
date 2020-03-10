@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
         <meta charset="utf-8">
-        <title>后台登录-在线管理系统</title>
+        <title>后台登录-乐学书店管理系统</title>
         <!-- base href="http://localhost/test/" -->
     <link rel="stylesheet" type="text/css" href="${base}/styles/admin/a.css">
     <script type="text/javascript" src="${base}/styles/admin/a.js"></script>

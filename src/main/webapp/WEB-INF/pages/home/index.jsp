@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
-<title>在线书店</title>
+<title>乐学书店</title>
 <!-- 新 Bootstrap 核心 CSS 文件 -->
 <link rel="stylesheet" href="${base}/styles/bootstrap/css/bootstrap.min.css">
 
@@ -46,10 +46,10 @@
 	  
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="first-slide" src="${base}/images/1.jpg" alt="First slide">
+          <img class="first-slide" src="${base}/images/11.png" alt="First slide">
         </div>
         <div class="item">
-          <img class="second-slide" src="${base}/images/2.jpg" alt="Second slide">
+          <img class="second-slide" src="${base}/images/22.png" alt="Second slide">
         </div>
         <div class="item">
           <img class="third-slide" src="${base}/images/3.jpg" alt="Third slide">

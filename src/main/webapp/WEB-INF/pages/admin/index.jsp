@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>企业网站管理系统</title>
+<title>乐学书店管理后台</title>
 <link rel="shortcut icon" href="${base}/favicon.ico">
 <link href="${base}/styles/admin/metinfo.css" rel="stylesheet" />
 <script type="text/javascript" src="${base}/styles/bootstrap/js/jquery-1.7.2.js"></script>

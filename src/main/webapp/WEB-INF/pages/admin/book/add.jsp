@@ -3,13 +3,13 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>无标题文档</title>	
+	<title>无标题文档</title>
 	<link href="${base}/styles/admin/metinfo.css" rel="stylesheet" />
 	<link rel="stylesheet" type="text/css" href="${base}/plugin/umeditor/themes/default/css/umeditor.css" />
 	<script type="text/javascript" src="${base}/plugin/umeditor/third-party/jquery.min.js"></script>
 	<script type="text/javascript" charset="utf-8" src="${base}/plugin/umeditor/umeditor.config.js"></script>
     <script type="text/javascript" charset="utf-8" src="${base}/plugin/umeditor/umeditor.min.js"> </script>
-    <script type="text/javascript" charset="utf-8" src="${base}/plugin/umeditor/lang/zh-cn/zh-cn.js"></script>	
+    <script type="text/javascript" charset="utf-8" src="${base}/plugin/umeditor/lang/zh-cn/zh-cn.js"></script>
 </head>
 <body>
 <div class="stat_list">
@@ -19,13 +19,13 @@
 </div>
 <form method="POST" enctype="multipart/form-data" name="myform" action="${base}/admin/book/saveAdd.htm" target="_self">
   <table cellpadding="2" cellspacing="1" class="table">
-    <tr> 
+    <tr>
         <td class="text"><span class="bi_tian">*</span>图书名称：</td>
-        <td class="input"><input name="name" type="text" class="text" /></td>       
+        <td class="input"><input name="name" type="text" class="text" /></td>
         <td class="text"><span class="bi_tian">*</span>作者：</td>
         <td class="input"><input name="author" type="text" class="text" /></td>
     </tr>
-    <tr>         
+    <tr>
         <td class="text"><span class="bi_tian">*</span>价格：</td>
         <td class="input"><input name="price" type="text" class="text" /></td>
         <td class="text"><span class="bi_tian">*</span>折扣：</td>
@@ -40,28 +40,28 @@
         	<option value="0.7">7折</option>
         	<option value="0.65">65折</option>
         	<option value="0.6">6折</option>
-        </select>        
+        </select>
         </td>
     </tr>
-    <tr> 
+    <tr>
         <td class="text"><span class="bi_tian">*</span>出版社：</td>
         <td class="input"><input name="press" type="text" class="text" /></td>
         <td class="text"><span class="bi_tian">*</span>出版时间：</td>
-        <td class="input"><input id="publishTime" name="publishTime" type="text" class="text" /></td>
+        <td class="input"><input id="publishTime" name="publishTime" type="text" class="text" />请输入（2020/10/01型时间）</td>
     </tr>
-    <tr> 
+    <tr>
         <td class="text"><span class="bi_tian">*</span>版次：</td>
-        <td class="input"><input name="edition" type="text" class="text" /></td>
+        <td class="input"><input name="edition" type="text" class="text" />（请输入数字）</td>
         <td class="text"><span class="bi_tian">*</span>印刷时间：</td>
-        <td class="input"><input id="printTime" name="printTime" type="text" class="text" /></td>
-    </tr>    
-    <tr> 
+        <td class="input"><input id="printTime" name="printTime" type="text" class="text" />请输入（2020/10/01型时间）</td>
+    </tr>
+    <tr>
         <td class="text"><span class="bi_tian">*</span>总页数：</td>
         <td class="input"><input name="pageNum" type="text" class="text" /></td>
         <td class="text"><span class="bi_tian">*</span>总字数：</td>
         <td class="input"><input name="wordNum" type="text" class="text" /></td>
     </tr>
-    <tr> 
+    <tr>
         <td class="text"><span class="bi_tian">*</span>开本：</td>
         <td class="input">
         <select name="booksize">
@@ -86,7 +86,7 @@
         </select>
         </td>
     </tr>
-    <tr> 
+    <tr>
         <td class="text"><span class="bi_tian">*</span>图片：</td>
         <td class="input">
         	<input type="file" name="myFile"/>
@@ -100,17 +100,17 @@
 		</select>
 		</td>
 	</tr>
-	<tr> 
+	<tr>
         <td class="text"><span class="bi_tian">*</span>排序索引：</td>
         <td class="input"><input name="orderIndex" type="text" class="text" value="1" /></td>
     </tr>
-	<tr> 
+	<tr>
         <td class="text" ><span class="bi_tian">*</span>描述：</td>
         <td class="input" colspan="4">
         <script type="text/plain" id="myEditor" name="description" style="width:900px;height:300px;"></script>
         </td>
     </tr>
-	<tr>         
+	<tr>
         <td class="text"></td>
 	    <td class="submit">
 		<input type="submit" name="submit" value="确认添加" class="submit" /></td>
@@ -121,6 +121,13 @@
 </form>
 <script type="text/javascript">
     var um = UM.getEditor('myEditor');
+        var mydateInput = document.getElementById("publishTime");
+        var date = new Date();
+        var dateString = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate();
+        mydateInput.value = dateString;
+        var mydateInputs = document.getElementById("printTime");
+        var dateString = date.getFullYear() + "/" + (date.getMonth() + 1) + "/" + date.getDate();
+        mydateInputs.value = dateString;
 </script>
 </body>
 </html>

@@ -5,14 +5,14 @@ import cn.jxufe.web.entity.User;
 
 public interface SystemService {
 
-	public abstract long getBookCount();
+    long getBookCount();
 
-	public abstract long getUserCount();
+    long getUserCount();
 
-	public abstract long getOrderCount();
-	
-	public abstract int loginCheck(String username, String password);
-	
-	public Admin queryAdminInfo(String username);
+    long getOrderCount();
+
+    int loginCheck(String username, String password);
+
+    Admin queryAdminInfo(String username);
 
 }

@@ -4,7 +4,7 @@
    <div class="top navbar-fixed-top">
       <div class="t_header">
 	     <div class="t_nav">
-		    <a href="${base}/index.htm">嗨，欢迎您访问在线书店！</a>
+		    <a href="${base}/index.htm">嗨，欢迎您访问乐学书店！</a>
 		 </div>
 		 <div class="t_inf">
 		 	<% String name=(String)session.getAttribute("username"); 
